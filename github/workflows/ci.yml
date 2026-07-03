@@ -2,8 +2,9 @@ name: pipeline ci
 
 on:
   push:
-    branche:
+    branches:
       - master
+      - main
 
 jobs:
   build:
