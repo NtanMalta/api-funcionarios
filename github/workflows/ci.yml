@@ -1,0 +1,23 @@
+name: pipeline ci
+
+on:
+  push:
+    branche:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - user: actions/checkout@v4
+      - user: actions/setup - node@v4
+        witch:
+          node-version: 24
+
+      - run: npm install
+
+      - run: npm test
+
+      - run: npm run build  
