@@ -1,14 +1,22 @@
-const Funcionario = require("../models/funcionario")
+    const Funcionario = require("../models/funcionario")
 
-exports.cadastrar = async(req,res) => {
-    //insert into funcionario values(?,?,?)
-    const funcionario = await Funcionario.create(req.body)
-    res.status(201).json(funcionario)
-}
+    exports.cadastrar = async(req,res) => {
+        
+        try {
 
-exports.listar = async(req,res) => {
+            const funcionario = await Funcionario.create(req.body)
+        res.status(201).json(funcionario)
+            
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({mensage:"Erro de Servidor"})
+        }
+    
+    }
 
-    //select * from funcionarios
-    const funcionarios = await Funcionario.findAll()
-    res.status(200).json(funcionarios)
-}
+    exports.listar = async(req,res) => {
+
+        //select * from funcionarios
+        const funcionarios = await Funcionario.findAll()
+        res.status(200).json(funcionarios)
+    }
