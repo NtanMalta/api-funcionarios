@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const request = require ("supertest")
 
 const app = require("../app")
@@ -7,10 +8,28 @@ const app = require("../app")
 describe("API de funcionarios",()=>[
 
     it("Deve cadastrar um funcionario",async()=>{
+=======
+const request = require("supertest");
+const app = require("../src/app");
+const sequelize = require("../src/config/database");
+
+
+
+afterAll(async()=>{
+
+    await sequelize.close();
+
+});
+
+describe("API Funcionarios",()=>{
+
+    it("Deve cadastrar funcionario", async()=>{
+>>>>>>> upstream/master
 
         const resposta = await request(app)
         .post("/funcionarios")
         .send({
+<<<<<<< HEAD
             nome:"maria",
             cargo:"Analista"
         })
@@ -23,3 +42,14 @@ describe("API de funcionarios",()=>[
 
     })
 ])
+=======
+            nome:"Maria",
+            cargo:"Analista"
+        });
+
+        expect(resposta.statusCode).toBe(201);
+
+    });
+
+});
+>>>>>>> upstream/master
