@@ -1,7 +1,7 @@
 const app = require("./app")
 
-const PORT = 3000
+const PORT = 3002
 
 app.listen(PORT,()=>{
-    console.log(`servidor rodando na porta ${300}`)
+    console.log(`servidor rodando na porta ${3002}`)
 })
