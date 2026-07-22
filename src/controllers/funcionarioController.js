@@ -1,3 +1,4 @@
+
 const { default: axios } = require("axios")
 const Funcionario = require("../models/funcionario")
 
@@ -7,12 +8,14 @@ const Funcionario = require("../models/funcionario")
 
             const funcionario = await Funcionario.create(req.body)
 
-            await axios.post(`${process.env.API_BENEFICIOS}/beneficios`,{
+            
+            await axios.post(`${process.env.API_BENEFICIOS}/beneficio`,{
                 funcionarioId: funcionario.id,
                 salario:funcionario.salario,
                 cargo: funcionario.cargo
             })
 
+            
 
             res.status(201).json(funcionario)
             
