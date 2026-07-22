@@ -38,8 +38,6 @@ jobs:
 
       - run: npm install
 
-      # Cria as tabelas no banco de testes
-      - run: npx sequelize-cli db:migrate --env test
-      
+      # Cria as tabelas no banco de testes      
 
       - run: npm run build
